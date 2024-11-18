@@ -1,0 +1,268 @@
+{
+	"info": {
+		"_postman_id": "92f0b5ad-e12b-4b72-b9c2-7bbed4a32f84",
+		"name": "File Sharing - Postman API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39785055"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"opsuser@example.com\",\r\n  \"password\": \"ops1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/files/upload",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6Im9wcyIsImlhdCI6MTczMTc2NTQwNCwiZXhwIjoxNzMxNzY5MDA0fQ.JjvopwgLkK-_i2w-e1NIiPKZ8wonG371Ug0JePXAFNY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/files/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"files",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/auth/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"clientuser\",\r\n  \"email\": \"clientuser@example.com\",\r\n  \"password\": \"client1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNzY1NzYyfQ.ODpSkbQt1TcJJcrtv0641aiYndzhI8ep30ynEBpSDrw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/auth/verify-email?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNzY1NzYyfQ.ODpSkbQt1TcJJcrtv0641aiYndzhI8ep30ynEBpSDrw",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"verify-email"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzMxNzY1NzYyfQ.ODpSkbQt1TcJJcrtv0641aiYndzhI8ep30ynEBpSDrw"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"clientuser@example.com\",\r\n  \"password\": \"client1234\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/files/list",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImNsaWVudCIsImlhdCI6MTczMTc2NTg4OSwiZXhwIjoxNzMxNzY5NDg5fQ.tHHmoCFfxolWwXelWFxsdae0IUyoCacsRQQHJNj_AfU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/files/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"files",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/api/files/download/5",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6ImNsaWVudCIsImlhdCI6MTczMTc2NTg4OSwiZXhwIjoxNzMxNzY5NDg5fQ.tHHmoCFfxolWwXelWFxsdae0IUyoCacsRQQHJNj_AfU",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:5000/api/files/download/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"files",
+						"download",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/uploads/filename?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlcGF0aCI6InVwbG9hZHNcXDE3MzE3NjU2MzY3MTIuZG9jeCIsImlhdCI6MTczMTc2NjAyOSwiZXhwIjoxNzMxNzY2NjI5fQ.T8sDQ16rJ_hj-3gD7px9GfY4pJ0ymfgzNHoAUEJzUOk",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/uploads/filename?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlcGF0aCI6InVwbG9hZHNcXDE3MzE3NjU2MzY3MTIuZG9jeCIsImlhdCI6MTczMTc2NjAyOSwiZXhwIjoxNzMxNzY2NjI5fQ.T8sDQ16rJ_hj-3gD7px9GfY4pJ0ymfgzNHoAUEJzUOk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"uploads",
+						"filename"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaWxlcGF0aCI6InVwbG9hZHNcXDE3MzE3NjU2MzY3MTIuZG9jeCIsImlhdCI6MTczMTc2NjAyOSwiZXhwIjoxNzMxNzY2NjI5fQ.T8sDQ16rJ_hj-3gD7px9GfY4pJ0ymfgzNHoAUEJzUOk"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
